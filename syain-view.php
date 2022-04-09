@@ -7,7 +7,7 @@
 <title><?= $title ?></title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.js"></script>
 
 <style>
 html,body,form {
@@ -137,8 +137,7 @@ $(function(){
         // UTF-8 の CSV を化けずに Excel で開く為
         saveAs(
             new Blob(
-                [csv]
-                , {type: "text/csv;charset=" + document.characterSet}
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.js"></script>                , {type: "text/csv;charset=" + document.characterSet}
             )
             , "syain.csv"
         );
