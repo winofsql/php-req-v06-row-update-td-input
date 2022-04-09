@@ -52,6 +52,9 @@ th {
     white-space: pre;
 }
 
+.folder {
+    float: right;
+}
 </style>
 <script>
 $(function(){
@@ -137,7 +140,8 @@ $(function(){
         // UTF-8 の CSV を化けずに Excel で開く為
         saveAs(
             new Blob(
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.js"></script>                , {type: "text/csv;charset=" + document.characterSet}
+                [new Uint8Array([0xEF, 0xBB, 0xBF]),csv]
+                , {type: "text/csv;charset=" + document.characterSet}
             )
             , "syain.csv"
         );
@@ -220,6 +224,7 @@ $(function(){
         <h3 class="alert alert-primary">
             <?= $title ?>
             <input id="action_save" type="button" value="CSV保存" class="btn btn-primary ms-3">
+            <a href="." class="btn btn-secondary btn-sm folder me-4">フォルダ</a>
         </h3>
         <input type="submit" name="update" value="更新" class="ms-4 btn btn-primary">
     </div>
